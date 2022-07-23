@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PACIBA System", "PACIBA System\PACIBA System.csproj", "{A99BB3EA-61A9-44AA-9AB8-F3EFC6D34E31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A99BB3EA-61A9-44AA-9AB8-F3EFC6D34E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99BB3EA-61A9-44AA-9AB8-F3EFC6D34E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99BB3EA-61A9-44AA-9AB8-F3EFC6D34E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99BB3EA-61A9-44AA-9AB8-F3EFC6D34E31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FF35D2D-F787-4AB7-B586-FB9B8D06C9E4}
+	EndGlobalSection
+EndGlobal
