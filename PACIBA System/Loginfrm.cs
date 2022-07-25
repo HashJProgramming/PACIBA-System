@@ -56,10 +56,11 @@ namespace PACIBA_System
                     }
                     else
                     {
-                        SQLiteCommand sqlcmd = new SQLiteCommand("INSERT INTO `Members` (`Username`, `Password`, `Fullname`) VALUES (@Username, @Password, @Fullname)", c);
+                        SQLiteCommand sqlcmd = new SQLiteCommand("INSERT INTO `Members` (`Username`, `Password`, `Fullname`, `CreatedDate`) VALUES (@Username, @Password, @Fullname, @CreatedDate)", c);
                         sqlcmd.Parameters.AddWithValue("@Username", this.gunaLineTextBox3.Text);
                         sqlcmd.Parameters.AddWithValue("@Password", this.gunaLineTextBox4.Text);
                         sqlcmd.Parameters.AddWithValue("@Fullname", this.gunaLineTextBox5.Text);
+                        sqlcmd.Parameters.AddWithValue("@CreatedDate", DateTime.Now.ToString());
                         sqlcmd.ExecuteNonQuery();
                         MessageBox.Show("Done!", "PACIBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.gunaLineTextBox3.Clear();

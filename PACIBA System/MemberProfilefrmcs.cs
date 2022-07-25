@@ -27,6 +27,7 @@ namespace PACIBA_System
         {
             string sql = "SELECT * FROM `Members` WHERE `Username` = '" + this.gunaLineTextBox1.Text + "'";
             using (SQLiteConnection c = new SQLiteConnection(ConnectionString))
+                
             {
                 c.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, c))
@@ -35,12 +36,61 @@ namespace PACIBA_System
                     {
                         while (rdr.Read())
                         {
-                            gunaLineTextBox3.Text = rdr["Fullname"].ToString();
-                            gunaLineTextBox2.Text = rdr["JerseyNumber"].ToString();
-                            gunaLineTextBox4.Text = rdr["Team"].ToString();
-                            gunaLineTextBox5.Text = rdr["EntranceFee"].ToString();
-                            gunaLineTextBox6.Text = rdr["Status"].ToString();
-                            gunaLineTextBox7.Text = rdr["CreatedDate"].ToString();
+                            // Fullname
+                            if (rdr["Fullname"].ToString() == "")
+                            {
+                                gunaLineTextBox3.Text = "Fullname";
+                            }
+                            else
+                            {
+                                gunaLineTextBox3.Text = rdr["Fullname"].ToString();
+                            }
+
+                            // Jersey No.
+                            if (rdr["JerseyNumber"].ToString() == "")
+                            {
+                                gunaLineTextBox2.Text = "Jersey No.";
+                            }
+                            else
+                            {
+                                gunaLineTextBox2.Text = rdr["JerseyNumber"].ToString();
+                            }
+                            // Address
+                            if (rdr["Address"].ToString() == "")
+                            {
+                                gunaLineTextBox4.Text = "Address";
+                            }
+                            else
+                            {
+                                gunaLineTextBox4.Text = rdr["Address"].ToString();
+                            }
+                            // Contact No.
+                            if (rdr["ContactNumber"].ToString() == "")
+                            {
+                                gunaLineTextBox5.Text = "Contact No.";
+                            }
+                            else
+                            {
+                                gunaLineTextBox5.Text = rdr["ContactNumber"].ToString();
+                            }
+                            // JOB
+                            if (rdr["Job"].ToString() == "")
+                            {
+                                gunaLineTextBox6.Text = "Job";
+                            }
+                            else
+                            {
+                                gunaLineTextBox6.Text = rdr["Job"].ToString();
+                            }
+                            // TEAM
+                            if (rdr["Team"].ToString() == "")
+                            {
+                                gunaLineTextBox7.Text = "Team";
+                            }
+                            else
+                            {
+                                gunaLineTextBox7.Text = rdr["Team"].ToString();
+                            }
                         }
                     }
                 }
@@ -90,7 +140,7 @@ namespace PACIBA_System
         {
             try
             {
-                string sql = "UPDATE `Members` SET `Fullname` = '" + gunaLineTextBox3.Text + "', `JerseyNumber` = '" + gunaLineTextBox2.Text + "', `Team` = '" + gunaLineTextBox4.Text + "', `EntranceFee` = '" + gunaLineTextBox5.Text + "', `Status` = '" + gunaLineTextBox6.Text + "' WHERE `Username` = '" + gunaLineTextBox1.Text + "'";
+                string sql = "UPDATE `Members` SET `Fullname` = '" + gunaLineTextBox3.Text + "', `JerseyNumber` = '" + gunaLineTextBox2.Text + "', `Address` = '" + gunaLineTextBox4.Text + "', `ContactNumber` = '" + gunaLineTextBox5.Text + "', `Job` = '" + gunaLineTextBox6.Text + "', `Team` = '" + gunaLineTextBox7.Text + "' WHERE `Username` = '" + gunaLineTextBox1.Text + "'";
                 //confirmation message yes or no
                 if (MessageBox.Show("Are you sure you want to update this member's profile?", "PACIBA System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -105,6 +155,31 @@ namespace PACIBA_System
                     MessageBox.Show("Member's profile has been updated!", "PACIBA System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("PACIBA System " + ex.Message, "PACIBA System Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = "UPDATE `Members` SET `Passwordhas` = '" + gunaLineTextBox9.Text + "'";
+                //confirmation message yes or no
+                if (MessageBox.Show("Are you sure you want to update your password?", "PACIBA System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    using (SQLiteConnection c = new SQLiteConnection(ConnectionString))
+                    {
+                        c.Open();
+                        using (SQLiteCommand cmd = new SQLiteCommand(sql, c))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("Member's password has been updated!", "PACIBA System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
