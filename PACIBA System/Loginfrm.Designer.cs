@@ -95,6 +95,7 @@
             this.label6.Size = new System.Drawing.Size(106, 21);
             this.label6.TabIndex = 12;
             this.label6.Text = "Administrator";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // gunaControlBox1
             // 

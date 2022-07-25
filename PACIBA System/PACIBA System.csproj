@@ -71,11 +71,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAccountRecovery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAccountRecovery.Designer.cs">
+      <DependentUpon>AdminAccountRecovery.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEvents.Designer.cs">
+      <DependentUpon>AdminEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMembership.Designer.cs">
+      <DependentUpon>AdminMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMembersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMembersList.Designer.cs">
+      <DependentUpon>AdminMembersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminStatistic.Designer.cs">
+      <DependentUpon>AdminStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="Loginfrm.cs">
       <SubType>Form</SubType>
@@ -109,6 +139,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminAccountRecovery.resx">
+      <DependentUpon>AdminAccountRecovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEvents.resx">
+      <DependentUpon>AdminEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMembership.resx">
+      <DependentUpon>AdminMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMembersList.resx">
+      <DependentUpon>AdminMembersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminStatistic.resx">
+      <DependentUpon>AdminStatistic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loginfrm.resx">
       <DependentUpon>Loginfrm.cs</DependentUpon>
     </EmbeddedResource>

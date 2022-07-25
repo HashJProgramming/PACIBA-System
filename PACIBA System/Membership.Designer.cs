@@ -119,6 +119,7 @@
             this.gunaLineTextBox2.Location = new System.Drawing.Point(750, 84);
             this.gunaLineTextBox2.Name = "gunaLineTextBox2";
             this.gunaLineTextBox2.PasswordChar = '\0';
+            this.gunaLineTextBox2.ReadOnly = true;
             this.gunaLineTextBox2.SelectedText = "";
             this.gunaLineTextBox2.Size = new System.Drawing.Size(140, 37);
             this.gunaLineTextBox2.TabIndex = 11;
@@ -136,6 +137,7 @@
             this.gunaLineTextBox3.Location = new System.Drawing.Point(474, 127);
             this.gunaLineTextBox3.Name = "gunaLineTextBox3";
             this.gunaLineTextBox3.PasswordChar = '\0';
+            this.gunaLineTextBox3.ReadOnly = true;
             this.gunaLineTextBox3.SelectedText = "";
             this.gunaLineTextBox3.Size = new System.Drawing.Size(416, 37);
             this.gunaLineTextBox3.TabIndex = 12;
@@ -153,6 +155,7 @@
             this.gunaLineTextBox4.Location = new System.Drawing.Point(474, 170);
             this.gunaLineTextBox4.Name = "gunaLineTextBox4";
             this.gunaLineTextBox4.PasswordChar = '\0';
+            this.gunaLineTextBox4.ReadOnly = true;
             this.gunaLineTextBox4.SelectedText = "";
             this.gunaLineTextBox4.Size = new System.Drawing.Size(416, 37);
             this.gunaLineTextBox4.TabIndex = 13;
@@ -170,6 +173,7 @@
             this.gunaLineTextBox5.Location = new System.Drawing.Point(474, 318);
             this.gunaLineTextBox5.Name = "gunaLineTextBox5";
             this.gunaLineTextBox5.PasswordChar = '\0';
+            this.gunaLineTextBox5.ReadOnly = true;
             this.gunaLineTextBox5.SelectedText = "";
             this.gunaLineTextBox5.Size = new System.Drawing.Size(200, 37);
             this.gunaLineTextBox5.TabIndex = 14;
@@ -188,6 +192,7 @@
             this.gunaLineTextBox6.Location = new System.Drawing.Point(690, 318);
             this.gunaLineTextBox6.Name = "gunaLineTextBox6";
             this.gunaLineTextBox6.PasswordChar = '\0';
+            this.gunaLineTextBox6.ReadOnly = true;
             this.gunaLineTextBox6.SelectedText = "";
             this.gunaLineTextBox6.Size = new System.Drawing.Size(200, 37);
             this.gunaLineTextBox6.TabIndex = 15;
@@ -217,6 +222,7 @@
             this.gunaLineTextBox7.Location = new System.Drawing.Point(474, 361);
             this.gunaLineTextBox7.Name = "gunaLineTextBox7";
             this.gunaLineTextBox7.PasswordChar = '\0';
+            this.gunaLineTextBox7.ReadOnly = true;
             this.gunaLineTextBox7.SelectedText = "";
             this.gunaLineTextBox7.Size = new System.Drawing.Size(416, 37);
             this.gunaLineTextBox7.TabIndex = 17;

@@ -41,6 +41,34 @@ namespace PACIBA_System
         }
 
 
+        private void login_administrator()
+        {
+            string sql = "SELECT * FROM `Admin` WHERE `Username` = '" + this.gunaLineTextBox1.Text + "' AND `Password` = '" + gunaLineTextBox2.Text + "'";
+
+            using (SQLiteConnection c = new SQLiteConnection(ConnectionString))
+            {
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, c))
+                {
+                    using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                            AdminDashboard dashboard = new AdminDashboard();
+                            this.Hide();
+                            gunaTransition1.ShowSync(dashboard);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong username or password, please try again", "PACIBA", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            return;
+                        }
+                    }
+                }
+            }
+
+        }
+
 
         private void register()
         {
@@ -56,10 +84,13 @@ namespace PACIBA_System
                     }
                     else
                     {
-                        SQLiteCommand sqlcmd = new SQLiteCommand("INSERT INTO `Members` (`Username`, `Password`, `Fullname`, `CreatedDate`) VALUES (@Username, @Password, @Fullname, @CreatedDate)", c);
+                        SQLiteCommand sqlcmd = new SQLiteCommand("INSERT INTO `Members` (`Username`, `Password`, `Fullname`, `CreatedDate`, `Status`, `EntranceFee`, `JerseyFee`) VALUES (@Username, @Password, @Fullname, @CreatedDate, @Status, @EntranceFee, @JerseyFee)", c);
                         sqlcmd.Parameters.AddWithValue("@Username", this.gunaLineTextBox3.Text);
                         sqlcmd.Parameters.AddWithValue("@Password", this.gunaLineTextBox4.Text);
                         sqlcmd.Parameters.AddWithValue("@Fullname", this.gunaLineTextBox5.Text);
+                        sqlcmd.Parameters.AddWithValue("@Status", "NOT PAID");
+                        sqlcmd.Parameters.AddWithValue("@EntranceFee", 0);
+                        sqlcmd.Parameters.AddWithValue("@JerseyFee", 0);
                         sqlcmd.Parameters.AddWithValue("@CreatedDate", DateTime.Now.ToString());
                         sqlcmd.ExecuteNonQuery();
                         MessageBox.Show("Done!", "PACIBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -154,6 +185,11 @@ namespace PACIBA_System
                 MessageBox.Show("PACIBA System have incounter an system error please contact the admin/developer! \n" + ex.Message, "PACIBA System Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            login_administrator();
         }
     }
 }
